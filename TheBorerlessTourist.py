@@ -1,7 +1,4 @@
 ### Input destination
-from pickle import TRUE
-
-
 destinations = [ 
     "Paris, France",
     "Shanghai, China",

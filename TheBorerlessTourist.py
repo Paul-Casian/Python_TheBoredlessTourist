@@ -46,10 +46,16 @@ def find_attractions(destination,interests):
             if interest in attractions_tags:
                 attractions_with_interest.append(possible_attraction[0])
     return attractions_with_interest
-
+### Find attractions for travelers
+def get_attractions_for_traveler(traveler):
+    traveler_destination = traveler[1]
+    traveler_interests = traveler[2]
+    traveler_attractions = find_attractions(traveler_destination,traveler_interests)
+    interests_string = "Hi " + str(traveler[0]) + ", we think you'll like these places around " + str(traveler_destination) + ": " + str(traveler_attractions[0]) + "."
+    return interests_string
 ###
 test_destination_index = get_traveler_location(test_traveler)
-print(test_destination_index)
+#print(test_destination_index)
 get_attraction_list()
 add_attraction("Los Angeles, USA",["Venice Beach", ['beach']])
 add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
@@ -62,6 +68,8 @@ add_attraction("São Paulo, Brazil", ["São Paulo Zoo", ["zoo"]])
 add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]])
 add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
-print(attractions)
+#print(attractions)
 la_arts = find_attractions("Los Angeles, USA",["art"])
-print(la_arts)
+#print(la_arts)
+smills_france = get_attractions_for_traveler(['Dereck Smill', 'Paris, France', ['monument']])
+print(smills_france)

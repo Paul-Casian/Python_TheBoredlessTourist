@@ -33,7 +33,8 @@ def get_attraction_list():
 ### Add atractions
 def add_attraction(destination,attraction):
     destination_index = get_destination_index(destination)
-    attraction_for_destination = attractions[destination_index].append(attraction)
+    ##attraction_for_destination = attractions[destination_index].append(attraction)
+    attractions[destination_index].append(attraction)
 ### Find attractions
 def find_attractions(destination,interests):
     destination_index = get_destination_index(destination)
